@@ -1,1 +1,149 @@
+/* * File CSS: style.css
+ * Tema: Minimalis & Modern untuk Website Sekolah
+ * Palet Warna: Emerald Green (Aksen), Nuansa Abu-abu (Teks & Latar)
+*/
+
+:root {
+    --primary-color: #10B981; /* Emerald-500 */
+    --primary-hover: #059669; /* Emerald-600 */
+    --text-dark: #1f2937;      /* Gray-800 */
+    --text-light: #4b5563;     /* Gray-600 */
+    --bg-light: #f9fafb;       /* Gray-50 */
+    --bg-white: #ffffff;
+    --border-color: #e5e7eb;   /* Gray-200 */
+}
+
+/* Pengaturan Dasar Body */
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header & Navigasi */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    padding: 8px 4px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Transisi Halaman */
+.section-content {
+    display: none;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.section-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bagian Hero (Gambar Utama) */
+.hero-bg {
+    background-image: url('https://placehold.co/1200x600/a7f3d0/1f2937?text=Kegiatan+Siswa+SDN+Gucialit+02');
+    background-size: cover;
+    background-position: center;
+}
+.hero-bg h1 {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Tombol */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    display: inline-block;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* Kartu (Card) */
+.card {
+    background-color: var(--bg-white);
+    border-radius: 1rem; /* 16px */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabel Kustom */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.custom-table th, .custom-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.custom-table thead th {
+    background-color: #f3f4f6; /* Gray-100 */
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+.custom-table tbody tr:nth-child(even) {
+    background-color: var(--bg-light);
+}
+.custom-table tbody tr:hover {
+    background-color: #d1fae5; /* emerald-100 */
+}
 
