@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD Negeri Gucialit 02 - Kabupaten Lumajang</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for menu icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #10B981; /* emerald-500 */
+            transform: translateY(-2px);
+        }
+        .section-content {
+            display: none; /* All sections are hidden by default */
+        }
+        .section-content.active {
+            display: block; /* The active section is shown */
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1200x600/a7f3d0/1f2937?text=Kegiatan+Siswa+SDN+Gucialit+02');
+            background-size: cover;
+            background-position: center;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://placehold.co/40x40/10B981/FFFFFF?text=L" alt="Logo Sekolah" class="h-10 w-10 rounded-full">
+                <a href="#" class="text-xl font-bold text-gray-800" onclick="showPage('beranda')">SDN Gucialit 02</a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a class="nav-link font-semibold active" data-page="beranda" onclick="showPage('beranda')">Beranda</a>
+                <a class="nav-link font-semibold" data-page="profil" onclick="showPage('profil')">Profil</a>
+                <a class="nav-link font-semibold" data-page="akademik" onclick="showPage('akademik')">Akademik</a>
+                <a class="nav-link font-semibold" data-page="kesiswaan" onclick="showPage('kesiswaan')">Kesiswaan</a>
+                <a class="nav-link font-semibold" data-page="fasilitas" onclick="showPage('fasilitas')">Fasilitas</a>
+                <a class="nav-link font-semibold" data-page="galeri" onclick="showPage('galeri')">Galeri</a>
+                <a class="nav-link font-semibold" data-page="ppdb" onclick="showPage('ppdb')">PPDB</a>
+                <a class="nav-link font-semibold" data-page="kontak" onclick="showPage('kontak')">Kontak</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="outline-none mobile-menu-button">
+                    <i data-feather="menu" class="w-6 h-6 text-gray-600"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('beranda')">Beranda</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('profil')">Profil</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('akademik')">Akademik</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('kesiswaan')">Kesiswaan</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('fasilitas')">Fasilitas</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('galeri')">Galeri</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('ppdb')">PPDB</a>
+            <a class="block py-2 px-4 text-sm hover:bg-emerald-100" onclick="showPage('kontak')">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Halaman Beranda -->
+        <section id="beranda" class="section-content">
+            <!-- Hero Section -->
+            <div class="hero-bg text-white">
+                <div class="bg-black bg-opacity-50 h-full w-full py-24 md:py-32 flex items-center justify-center">
+                    <div class="text-center max-w-4xl mx-auto px-4">
+                        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Selamat Datang di Website Resmi SD Negeri Gucialit 02</h1>
+                        <p class="text-lg md:text-2xl font-semibold italic mb-8">"BERSIH": Berkarakter, Empati, Ramah, Sehat, Indah dan Humanis</p>
+                        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <button onclick="showPage('ppdb')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Informasi PPDB 2025/2026</button>
+                            <button onclick="showPage('akademik')" class="bg-transparent border-2 border-white hover:bg-white hover:text-emerald-500 text-white font-bold py-3 px-8 rounded-full transition duration-300">Lihat Agenda Sekolah</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <!-- Sambutan Kepala Sekolah -->
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-16 flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://placehold.co/150x150/d1d5db/374151?text=Foto+Kepsek" alt="Foto Kepala Sekolah" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-emerald-200">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-2xl font-bold text-gray-900">Sambutan Kepala Sekolah</h2>
+                        <p class="text-lg font-semibold text-emerald-600 mb-2">Ibu TITIK WELASATI, S.Pd.</p>
+                        <p class="text-gray-600 leading-relaxed">"Harapan kami semoga kurikulum ini dapat digunakan sebagai panduan bagi seluruh warga sekolah dalam melaksanakan tugas pokok dan fungsinya... Semoga Allah SWT senantiasa memberikan petunjuk terhadap segala upaya yang kita lakukan demi peningkatan mutu pendidikan khususnya di SD Negeri Gucialit 02."</p>
+                    </div>
+                </div>
+
+                <!-- Keunggulan Sekolah -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Mengapa Memilih SDN Gucialit 02?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Kami berdedikasi untuk menciptakan lingkungan belajar yang holistik dan mendukung potensi setiap siswa.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-md card">
+                        <div class="bg-emerald-100 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                             <i data-feather="award" class="w-8 h-8 text-emerald-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Prestasi Olahraga</h3>
+                        <p class="text-gray-600">Memiliki rekam jejak prestasi unggul di bidang non-akademik, terutama olahraga, yang didukung oleh fasilitas memadai.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md card">
+                        <div class="bg-emerald-100 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                           <i data-feather="pen-tool" class="w-8 h-8 text-emerald-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ekstrakurikuler Beragam</h3>
+                        <p class="text-gray-600">Menyediakan wadah minat dan bakat melalui 6+ pilihan ekstrakurikuler, dari seni hingga olahraga.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md card">
+                        <div class="bg-emerald-100 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                           <i data-feather="heart" class="w-8 h-8 text-emerald-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Pembentukan Karakter</h3>
+                        <p class="text-gray-600">Menerapkan budaya sekolah "BERSIH" dan program pembiasaan harian untuk membentuk akhlak mulia.</p>
+                    </div>
+                </div>
+
+                 <!-- Berita & Agenda -->
+                <div class="grid md:grid-cols-2 gap-8 mt-16">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Berita Terbaru</h3>
+                        <div class="space-y-4">
+                            <div class="border-b pb-4">
+                                <h4 class="font-semibold text-lg">Implementasi Projek P5 "Bhineka Tunggal Ika"</h4>
+                                <p class="text-sm text-gray-500">Siswa-siswi belajar tentang keragaman budaya Indonesia melalui kegiatan yang menyenangkan dan kolaboratif.</p>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold text-sm">Baca selengkapnya &rarr;</a>
+                            </div>
+                            <div class="border-b pb-4">
+                                <h4 class="font-semibold text-lg">Semangat Operasi Semut dalam Program Jumat Bersih</h4>
+                                <p class="text-sm text-gray-500">Membiasakan kepedulian terhadap lingkungan melalui aksi pungut sampah di sekitar sekolah.</p>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold text-sm">Baca selengkapnya &rarr;</a>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Prestasi Tim Sepak Bola di Kompetisi Kecamatan</h4>
+                                <p class="text-sm text-gray-500">Tim sepak bola sekolah berhasil meraih juara dalam turnamen antar sekolah tingkat kecamatan.</p>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold text-sm">Baca selengkapnya &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Agenda Mendatang</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-4">
+                                <div class="bg-red-100 text-red-700 p-3 rounded-lg flex flex-col items-center justify-center">
+                                    <span class="font-bold text-lg">16</span>
+                                    <span class="text-xs font-semibold">SEP</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Peringatan Maulid Nabi Muhammad SAW</h4>
+                                    <p class="text-sm text-gray-500">Kegiatan keagamaan untuk meningkatkan iman dan takwa.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-4">
+                                <div class="bg-blue-100 text-blue-700 p-3 rounded-lg flex flex-col items-center justify-center">
+                                    <span class="font-bold text-lg">10</span>
+                                    <span class="text-xs font-semibold">OKT</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Pelaksanaan Kegiatan Tengah Semester</h4>
+                                    <p class="text-sm text-gray-500">Evaluasi belajar tengah semester untuk seluruh siswa.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-4">
+                                <div class="bg-yellow-100 text-yellow-700 p-3 rounded-lg flex flex-col items-center justify-center">
+                                    <span class="font-bold text-lg">28</span>
+                                    <span class="text-xs font-semibold">OKT</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Pelaksanaan Asesmen Nasional (AN) SD Gel. I</h4>
+                                    <p class="text-sm text-gray-500">Diikuti oleh siswa kelas V yang terpilih.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Galeri Singkat -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-center mb-8">Galeri Kegiatan</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <img src="https://placehold.co/400x300/e0e7ff/4338ca?text=Kegiatan+P5" alt="Galeri 1" class="rounded-lg shadow-md w-full h-full object-cover card">
+                        <img src="https://placehold.co/400x300/dcfce7/166534?text=Ekskul+Pramuka" alt="Galeri 2" class="rounded-lg shadow-md w-full h-full object-cover card">
+                        <img src="https://placehold.co/400x300/fefce8/854d0e?text=Lab+Komputer" alt="Galeri 3" class="rounded-lg shadow-md w-full h-full object-cover card">
+                        <img src="https://placehold.co/400x300/fee2e2/991b1b?text=Lomba+Olahraga" alt="Galeri 4" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    </div>
+                     <div class="text-center mt-8">
+                        <button onclick="showPage('galeri')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">Lihat Semua Foto</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Halaman Profil -->
+        <section id="profil" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Profil Sekolah</h2>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-700">Visi & Misi</h3>
+                    <h4 class="text-xl font-semibold mb-2">Visi</h4>
+                    <p class="italic text-gray-700 mb-4">"Mewujudkan Murid Pembelajar yang Bertakwa, Berkembang sesuai Potensi, Berprestasi, Berwawasan IPTEK dan Berwawasan Lingkungan"</p>
+                    <h4 class="text-xl font-semibold mb-2">Misi</h4>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600">
+                        <li>Mewujudkan pendidikan yang menghasilkan lulusan beriman dan bertaqwa.</li>
+                        <li>Mengembangkan bidang Ilmu Pengetahuan dan Teknologi berdasarkan minat, bakat, dan potensi peserta didik.</li>
+                        <li>Mewujudkan terciptanya pelajar pancasila (P5).</li>
+                        <li>Mewujudkan pendidikan untuk mengembangkan hasil belajar siswa yang holistik dan berprestasi.</li>
+                        <li>Mengembangkan kreativitas berpikir kritis, lancar, logis, orisinal dan mahir dalam literasi numerasi.</li>
+                        <li>Membiasakan siswa memiliki kepekaan sosial, berakhlak, dan berkarakter.</li>
+                        <li>Mengembangkan sikap mengenal, mempelajari, dan menghargai Budaya setempat.</li>
+                        <li>Menciptakan lingkungan sekolah yang aman nyaman dan kondusif.</li>
+                    </ol>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-700">Sejarah Sekolah</h3>
+                    <p class="text-gray-600 leading-relaxed">Informasi mengenai sejarah berdirinya SDN Gucialit 02 akan segera kami tambahkan. Saat ini, sekolah terus berkembang dan beradaptasi dengan Kurikulum Merdeka untuk memberikan pendidikan terbaik bagi putra-putri di Kecamatan Gucialit dan sekitarnya, dengan fokus pada pengembangan karakter, prestasi, dan kepedulian lingkungan.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-700">Tenaga Pendidik & Kependidikan</h3>
+                    <p class="text-gray-600 mb-6">SDN Gucialit 02 didukung oleh tenaga pendidik dan kependidikan yang berdedikasi dan kompeten di bidangnya.</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-lg">
+                            <thead class="bg-emerald-600 text-white">
+                                <tr>
+                                    <th class="py-3 px-4 text-left">No</th>
+                                    <th class="py-3 px-4 text-left">Nama</th>
+                                    <th class="py-3 px-4 text-left">Jabatan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b"><td class="py-3 px-4">1</td><td class="py-3 px-4 font-medium">Titik Welasati, S.Pd</td><td class="py-3 px-4">Kepala Sekolah</td></tr>
+                                <tr class="bg-gray-50 border-b"><td class="py-3 px-4">2</td><td class="py-3 px-4 font-medium">Tri Atmajawati, S.Pd.SD</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="border-b"><td class="py-3 px-4">3</td><td class="py-3 px-4 font-medium">Kiki Febriyanti, S.Pd.SD</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="bg-gray-50 border-b"><td class="py-3 px-4">4</td><td class="py-3 px-4 font-medium">Rina Estuningsih, S.Pd</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="border-b"><td class="py-3 px-4">5</td><td class="py-3 px-4 font-medium">Naning Nur Oktafia, S.Pd</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="bg-gray-50 border-b"><td class="py-3 px-4">6</td><td class="py-3 px-4 font-medium">Evi Ariwiyanti, S.Pd</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="border-b"><td class="py-3 px-4">7</td><td class="py-3 px-4 font-medium">Dimas Saputra</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="bg-gray-50 border-b"><td class="py-3 px-4">8</td><td class="py-3 px-4 font-medium">Sukarno Eka Putra</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="border-b"><td class="py-3 px-4">9</td><td class="py-3 px-4 font-medium">Odi Fardha Firmansyah</td><td class="py-3 px-4">Guru</td></tr>
+                                <tr class="bg-gray-50"><td class="py-3 px-4">10</td><td class="py-3 px-4 font-medium">Muchamad Holil</td><td class="py-3 px-4">Penjaga</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Halaman Akademik -->
+        <section id="akademik" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Akademik</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-700">Kurikulum</h3>
+                        <p class="text-gray-600 leading-relaxed">SDN Gucialit 02 pada Tahun Pelajaran 2024/2025 secara penuh menerapkan <strong>Kurikulum Merdeka</strong> untuk seluruh jenjang dari Kelas I hingga Kelas VI. Kurikulum ini dirancang untuk memberikan fleksibilitas kepada guru dalam mengajar sesuai dengan tingkat kemampuan siswa dan berfokus pada pengembangan karakter serta kompetensi esensial.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-700">Muatan Lokal</h3>
+                        <p class="text-gray-600 leading-relaxed">Sebagai bagian dari upaya pelestarian budaya daerah Jawa Timur, sekolah kami menyelenggarakan mata pelajaran muatan lokal wajib yaitu <strong>Bahasa Jawa</strong>. Pembelajaran ini bertujuan agar siswa dapat mengenal, mencintai, dan menggunakan bahasa daerahnya dengan baik dan santun.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mt-8">
+                     <h3 class="text-2xl font-bold mb-4 text-emerald-700 text-center">Projek Penguatan Profil Pelajar Pancasila (P5)</h3>
+                     <p class="text-gray-600 leading-relaxed text-center max-w-3xl mx-auto mb-6">P5 adalah kegiatan pembelajaran lintas disiplin ilmu untuk mengamati dan memikirkan solusi terhadap permasalahan di lingkungan sekitarnya. Ini adalah sarana untuk menguatkan berbagai kompetensi dalam Profil Pelajar Pancasila.</p>
+                     <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg text-center">
+                        <p class="font-semibold text-emerald-800">Tema P5 Tahun Ajaran 2024/2025:</p>
+                        <p class="text-2xl font-bold text-emerald-900 mt-2">Kearifan Lokal & Bhineka Tunggal Ika</p>
+                        <p class="text-sm text-emerald-700 mt-2">Dengan fokus pada dimensi: Berkebhinekaan Global, Mandiri, dan Kreatif.</p>
+                     </div>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg mt-8 text-center">
+                     <h3 class="text-2xl font-bold mb-4 text-emerald-700">Kalender Akademik 2024/2025</h3>
+                     <p class="text-gray-600 mb-4">Atur jadwal kegiatan akademik Anda. Unduh kalender pendidikan lengkap kami di sini.</p>
+                     <a href="KSP SDN GUCIALIT 02.pdf" download="Kalender_Akademik_SDN_Gucialit_02.pdf" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        <i data-feather="download" class="inline-block mr-2 -mt-1"></i>Unduh Kalender Pendidikan
+                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman Kesiswaan -->
+        <section id="kesiswaan" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Kesiswaan</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-700">Ekstrakurikuler</h3>
+                        <p class="text-gray-600 mb-4">Kami menyediakan beragam kegiatan ekstrakurikuler untuk menyalurkan bakat, minat, dan kreativitas siswa. Siswa dapat memilih maksimal dua kegiatan.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3"></i>Pramuka (Wajib)</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3"></i>Seni Tari</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3"></i>Al-Banjari</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3"></i>Drum Band</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3"></i>Pencak Silat</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3"></i>Sepak Bola</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-700">Program Pembiasaan Karakter</h3>
+                        <p class="text-gray-600 mb-4">Untuk membentuk pribadi yang berakhlak mulia, kami melaksanakan program pembiasaan secara rutin, meliputi:</p>
+                        <ul class="space-y-3">
+                           <li class="flex items-center"><i data-feather="sun" class="w-5 h-5 text-yellow-500 mr-3"></i><strong>Harian:</strong> Penyambutan siswa, One Day One Surah, Gerakan Pungut Sampah.</li>
+                           <li class="flex items-center"><i data-feather="calendar" class="w-5 h-5 text-blue-500 mr-3"></i><strong>Mingguan:</strong> Upacara bendera, Sholat Dhuha berjamaah.</li>
+                           <li class="flex items-center"><i data-feather="award" class="w-5 h-5 text-red-500 mr-3"></i><strong>Bulanan:</strong> Setoran hafalan, Tantangan mendongeng, Pidato/Pildacil.</li>
+                            <li class="flex items-center"><i data-feather="gift" class="w-5 h-5 text-purple-500 mr-3"></i><strong>Tahunan:</strong> Bakti sosial Ramadhan, Peringatan hari besar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman Fasilitas -->
+        <section id="fasilitas" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Fasilitas Sekolah</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Fasilitas Items -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/dbeafe/1e40af?text=Ruang+Kelas" alt="Ruang Kelas" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Ruang Kelas (6)</h3></div>
+                    </div>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/d1fae5/065f46?text=Perpustakaan" alt="Perpustakaan" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Perpustakaan</h3></div>
+                    </div>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/f3e8ff/581c87?text=Lab+Komputer" alt="Lab Komputer" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Lab Komputer</h3></div>
+                    </div>
+                     <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/fef9c3/854d0e?text=Musholla" alt="Musholla" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Musholla</h3></div>
+                    </div>
+                     <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/fee2e2/991b1b?text=Ruang+UKS" alt="Ruang UKS" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Ruang UKS</h3></div>
+                    </div>
+                     <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/e0f2fe/0c4a6e?text=Lapangan+Olahraga" alt="Lapangan Olahraga" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Lapangan Olahraga</h3></div>
+                    </div>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/f0fdf4/166534?text=Kebun+Sekolah" alt="Kebun Sekolah" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Kebun Bibit</h3></div>
+                    </div>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card">
+                        <img src="https://placehold.co/400x250/ecfdf5/059669?text=Peralatan+Digital" alt="Peralatan Digital" class="w-full h-32 object-cover">
+                        <div class="p-4"><h3 class="font-bold">Perangkat Digital</h3></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman Galeri -->
+        <section id="galeri" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Galeri Kegiatan</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="https://placehold.co/400x300/e0e7ff/4338ca?text=Upacara+Bendera" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/dcfce7/166534?text=Kegiatan+Kelas" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/fefce8/854d0e?text=Drum+Band" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/fee2e2/991b1b?text=Pencak+Silat" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/f3e8ff/581c87?text=Seni+Tari" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/dbeafe/1e40af?text=Literasi" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/f0fdf4/166534?text=Kerja+Bakti" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                    <img src="https://placehold.co/400x300/fef2f2/991b1b?text=Rapat+Guru" alt="Galeri" class="rounded-lg shadow-md w-full h-full object-cover card">
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman PPDB -->
+        <section id="ppdb" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16 text-center">
+                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg max-w-3xl mx-auto">
+                    <div class="bg-emerald-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6">
+                         <i data-feather="file-text" class="w-10 h-10 text-emerald-600"></i>
+                    </div>
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Penerimaan Peserta Didik Baru (PPDB)</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">Informasi lengkap mengenai jadwal, persyaratan, dan alur pendaftaran untuk Tahun Ajaran 2025/2026 akan segera kami rilis. Mohon untuk memantau halaman ini secara berkala.<br><br> Mari bergabung bersama keluarga besar SDN Gucialit 02!</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Halaman Kontak -->
+        <section id="kontak" class="section-content">
+            <div class="container mx-auto px-6 py-12 md:py-16">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Hubungi Kami</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-700">Informasi Kontak</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <p class="flex items-start"><i data-feather="map-pin" class="w-5 h-5 mr-3 mt-1 text-emerald-500"></i><span><strong>Alamat:</strong><br>Afdiling Puring PTPN XII Kebun Kertowono, Desa Gucialit, Kec. Gucialit, Kab. Lumajang, Jawa Timur 67353</span></p>
+                            <p class="flex items-center"><i data-feather="mail" class="w-5 h-5 mr-3 text-emerald-500"></i><span><strong>Email:</strong> sdngucialityes@gmail.com</span></p>
+                            <p class="flex items-center"><i data-feather="phone" class="w-5 h-5 mr-3 text-emerald-500"></i><span><strong>Telepon:</strong> [Nomor akan ditambahkan]</span></p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl shadow-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.998246473183!2d113.155!3d-8.1025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6697b0d778d91%3A0x7d018240ed33c5b5!2sSDN%20GUCIALIT%2002!5e0!3m2!1sen!2sid!4v1689759275000!5m2!1sen!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">SD Negeri Gucialit 02</h3>
+                    <p class="text-gray-400 text-sm">Mencetak generasi berkarakter, berprestasi, dan berwawasan lingkungan.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Tautan Cepat</h3>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><a href="#" class="hover:text-emerald-400" onclick="showPage('profil')">Profil Sekolah</a></li>
+                        <li><a href="#" class="hover:text-emerald-400" onclick="showPage('akademik')">Informasi Akademik</a></li>
+                        <li><a href="#" class="hover:text-emerald-400" onclick="showPage('ppdb')">Pendaftaran Siswa Baru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Media Sosial</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-emerald-400"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-emerald-400"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-emerald-400"><i data-feather="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2024 SD Negeri Gucialit 02. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for single-page navigation and mobile menu
+        
+        // Show the default page on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('beranda');
+            feather.replace(); // Initialize Feather Icons
+        });
+
+        function showPage(pageId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            const activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+            }
+
+            // Update active state on nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu after selection
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.add('hidden');
+            
+            // Scroll to top of the page
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Add event listeners to mobile menu links to close menu on click
+        const mobileLinks = menu.getElementsByTagName('a');
+        for(let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
