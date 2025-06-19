@@ -4,8 +4,8 @@
 */
 
 :root {
-    --primary-color: #10B981; /* Emerald-500 */
-    --primary-hover: #059669; /* Emerald-600 */
+    --primary-color: #e2f53a; /* Emerald-500 */
+    --primary-hover: #2947aa; /* Emerald-600 */
     --text-dark: #1f2937;      /* Gray-800 */
     --text-light: #4b5563;     /* Gray-600 */
     --bg-light: #f9fafb;       /* Gray-50 */
@@ -49,7 +49,7 @@ header {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover, .nav-link.active, .nav-link:focus {
     color: var(--primary-color);
 }
 
@@ -146,4 +146,3 @@ header {
 .custom-table tbody tr:hover {
     background-color: #d1fae5; /* emerald-100 */
 }
-
