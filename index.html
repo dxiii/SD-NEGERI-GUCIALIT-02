@@ -37,9 +37,19 @@
             display: block; /* The active section is shown */
         }
         .hero-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('Gambar/Screenshot 2025-07-30 105234.png');
             background-size: cover;
             background-position: center;
+            filter: blur(5px); /* "70%" bukanlah nilai blur yang valid, jadi digunakan nilai piksel. Sesuaikan sesuai kebutuhan. */
+            transform: scale(1.05); /* Mencegah tepi yang kabur terlihat di dalam container */
+            z-index: -1;
         }
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
